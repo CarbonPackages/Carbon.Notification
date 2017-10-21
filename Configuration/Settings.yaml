@@ -11,8 +11,8 @@ Neos:
     userInterface:
       translation:
         autoInclude:
-          Carbon.Image:
+          Carbon.Notification:
             - 'NodeTypes/*'
     fusion:
       autoInclude:
-        Carbon.Image: true
+        Carbon.Notification: true
