@@ -1,0 +1,6 @@
+// Add a notification to the backend view. `type` can be `alert`, `warning` (default) or `info`.
+// You need to set `content` to get the notification show.
+// Great for NodeTypes who need an input in the inspector.
+prototype(Carbon.Notification:Backend) < prototype(Carbon.Notification:Tag) {
+    @if.inBackend = ${node.context.inBackend}
+}

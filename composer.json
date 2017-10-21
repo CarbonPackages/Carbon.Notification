@@ -1,0 +1,39 @@
+{
+    "name": "carbon/notification",
+    "type": "neos-plugin",
+    "license": "MIT",
+    "description":
+        "This package provides a tiny fusion helper for notifications.",
+    "keywords": ["flow", "neos", "fusion", "helper"],
+    "authors": [
+        {
+            "name": "Jon Uhlmann",
+            "email": "me@jonnitto.ch",
+            "homepage": "https://twitter.com/jonnitto",
+            "role": "Developer"
+        }
+    ],
+    "require": {
+        "neos/neos": "~3.0 || dev-master"
+    },
+    "archive": {
+        "exclude": [
+            ".gitignore",
+            ".github",
+            ".editorconfig",
+            "CODE_OF_CONDUCT.md"
+        ]
+    },
+    "autoload": {
+        "psr-4": {
+            "Carbon\\Notification\\": "Classes"
+        }
+    },
+    "extra": {
+        "marketplace-account": "me@jonnitto.ch",
+        "installer-name": "Carbon.Notification",
+        "neos": {
+            "package-key": "Carbon.Notification"
+        }
+    }
+}
