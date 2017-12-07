@@ -1,7 +1,7 @@
 // Add a notification. `type` can be `alert`, `warning` (default) or `info`.
 // You need to set `content` to get the notification show.
 // Great for NodeTypes who need an input in the inspector.
-prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Tag) {
+prototype(Carbon.Notification:Tag) < prototype(TYPO3.TypoScript:Tag) {
     # type can be alert, warning or info
     type = 'warning'
 
@@ -12,7 +12,7 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Tag) {
 
     @if.hasContent = ${this.content}
 
-    attributes.style = Neos.Fusion:Array {
+    attributes.style = TYPO3.TypoScript:Array {
         default = ${config.style}
         type = ${config[type]}
     }
