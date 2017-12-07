@@ -1,9 +1,14 @@
-Carbon.Notification Package for Neos CMS
-========================================
-
 [![Latest Stable Version](https://poser.pugx.org/carbon/notification/v/stable)](https://packagist.org/packages/carbon/notification)
 [![Total Downloads](https://poser.pugx.org/carbon/notification/downloads)](https://packagist.org/packages/carbon/notification)
 [![License](https://poser.pugx.org/carbon/notification/license)](https://packagist.org/packages/carbon/notification)
+[![GitHub forks](https://img.shields.io/github/forks/jonnitto/Carbon.Notification.svg?style=social&label=Fork)](https://github.com/jonnitto/Carbon.Notification/fork)
+[![GitHub stars](https://img.shields.io/github/stars/jonnitto/Carbon.Notification.svg?style=social&label=Stars)](https://github.com/jonnitto/Carbon.Notification/stargazers)
+[![GitHub watchers](https://img.shields.io/github/watchers/jonnitto/Carbon.Notification.svg?style=social&label=Watch)](https://github.com/jonnitto/Carbon.Notification/subscription)
+[![GitHub followers](https://img.shields.io/github/followers/jonnitto.svg?style=social&label=Follow)](https://github.com/jonnitto/followers)
+[![Follow Jon on Twitter](https://img.shields.io/twitter/follow/jonnitto.svg?style=social&label=Follow)](https://twitter.com/jonnitto)
+
+Carbon.Notification Package for Neos CMS
+========================================
 
 This package provides a tiny fusion helper for notifications.
 
