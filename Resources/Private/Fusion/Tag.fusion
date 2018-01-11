@@ -16,5 +16,5 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Tag) {
         default = ${config.style}
         type = ${config[type]}
     }
-    content = null
+    content = ${value}
 }
