@@ -2,8 +2,7 @@
     "name": "carbon/notification",
     "type": "neos-plugin",
     "license": "MIT",
-    "description":
-        "This package provides a tiny fusion helper for notifications.",
+    "description": "This package provides a tiny fusion helper for notifications.",
     "keywords": ["flow", "neos", "fusion", "helper"],
     "authors": [
         {
@@ -14,15 +13,10 @@
         }
     ],
     "require": {
-        "neos/neos": "^3.0 || ^4.0 || dev-master"
+        "neos/fusion": "~3.0 || ~4.0"
     },
     "archive": {
-        "exclude": [
-            ".gitignore",
-            ".github",
-            ".editorconfig",
-            "CODE_OF_CONDUCT.md"
-        ]
+        "exclude": [".gitignore", ".github", ".editorconfig", "CODE_OF_CONDUCT.md"]
     },
     "autoload": {
         "psr-4": {
