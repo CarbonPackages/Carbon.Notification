@@ -1,6 +1,6 @@
 {
     "name": "carbon/notification",
-    "type": "neos-plugin",
+    "type": "neos-carbon",
     "license": "MIT",
     "description": "This package provides a tiny fusion helper for notifications.",
     "keywords": ["flow", "neos", "fusion", "helper"],
