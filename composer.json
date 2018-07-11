@@ -1,6 +1,6 @@
 {
     "name": "carbon/notification",
-    "type": "typo3-flow-plugin",
+    "type": "neos-carbon",
     "license": "MIT",
     "description": "This package provides a tiny fusion helper for notifications.",
     "keywords": ["flow", "neos", "fusion", "helper"],
@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "neos/neos": "~2.0"
+        "typo3/typoscript": "~2.0"
     },
     "archive": {
         "exclude": [".gitignore", ".github", ".editorconfig", "CODE_OF_CONDUCT.md"]
