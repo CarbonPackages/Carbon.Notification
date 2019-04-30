@@ -11,14 +11,14 @@ This package provides a tiny fusion helper for notifications.
 
 ## [Carbon.Notification:Tag](Resources/Private/Fusion/Tag.fusion)
 
-Add a notification. `type` can be `alert`, `warning` (default) or `info`. You
-need to set `content` to get the notification show. Great for NodeTypes who need
-an input in the inspector.
+Add a notification. `type` can be `alert`, `warning` (default), `info` or
+`backend`. You need to set `content` to get the notification show.
+Great for NodeTypes who need an input in the inspector.
 
 ## [Carbon.Notification:Backend](Resources/Private/Fusion/Backend.fusion)
 
-A variant from `Carbon.Notification:Tag`. This notification get only shown in
-the backend.
+A variant from `Carbon.Notification:Tag`.
+This notification get only shown in the backend.
 
 ## Installation
 
