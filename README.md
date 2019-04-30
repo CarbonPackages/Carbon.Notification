@@ -20,6 +20,13 @@ Great for NodeTypes who need an input in the inspector.
 A variant from `Carbon.Notification:Tag`.
 This notification get only shown in the backend.
 
+## [Carbon.Notification:Data](Resources/Private/Fusion/Data.fusion)
+
+Add a notification to the backend view. You need to set `content` to get the
+notification show. This isreat for NodeTypes who need an input in the inspector.
+Add this prototype to `data-carbon-alert`, `data-carbon-warning`,
+`data-carbon-info` or `data-carbon-backend` to an element as attribute.
+
 ## Installation
 
 Most of the time you have to make small adjustments to a package (e.g.

@@ -1,0 +1,14 @@
+prototype(Neos.Neos:Page) {
+    head.stylesheets.carbonNotification = Neos.Fusion:Array {
+        @if.inBackend = ${node.context.inBackend}
+        @context.config = ${Configuration.setting('Carbon.Notification')}
+        style = ${'[data-carbon-alert]::after,[data-carbon-warning]::after,[data-carbon-info]::after,[data-carbon-backend]::after{' + config.style + config.data + '}'}
+        alert = ${'[data-carbon-alert]::after{content:attr(data-carbon-alert);' + config.alert + '}'}
+        warning = ${'[data-carbon-warning]::after{content:attr(data-carbon-warning);' + config.warning + '}'}
+        info = ${'[data-carbon-info]::after{content:attr(data-carbon-info);' + config.info + '}'}
+        backend = ${'[data-carbon-backend]::after{content:attr(data-carbon-backend);' + config.backend + '}'}
+        hide = ${'[data-carbon-alert]:not(:empty)::after,[data-carbon-warning]:not(:empty)::after,[data-carbon-info]:not(:empty)::after,[data-carbon-backend]:not(:empty)::after{' + config.hide +'}'}
+        @process.wrap = ${'<style type="text/css">' + value + '</style>'}
+    }
+}
+

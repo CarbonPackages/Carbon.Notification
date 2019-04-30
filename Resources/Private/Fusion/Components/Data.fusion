@@ -1,0 +1,13 @@
+// Add a notification to the backend view. 
+// You need to set `content` to get the notification show.
+// Great for NodeTypes who need an input in the inspector.
+// Add `data-carbon-alert`, `data-carbon-warning` or `data-carbon-info` to an element
+prototype(Carbon.Notification:Data) < prototype(Neos.Fusion:Value) {
+    @if {
+        inBackend = ${node.context.inBackend}
+        hasContent = ${this.content}
+    }
+    content = ${value}
+    value = ${this.content}
+}
+
