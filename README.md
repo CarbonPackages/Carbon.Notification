@@ -23,7 +23,7 @@ This notification get only shown in the backend.
 ## [Carbon.Notification:Data](Resources/Private/Fusion/Data.fusion)
 
 Add a notification to the backend view. You need to set `content` to get the
-notification show. This isreat for NodeTypes who need an input in the inspector.
+notification show. This is great for NodeTypes who need an input in the inspector.
 Add this prototype to `data-carbon-alert`, `data-carbon-warning`,
 `data-carbon-info` or `data-carbon-backend` to an element as attribute.
 
