@@ -49,7 +49,3 @@ The `--no-update` command prevent the automatic update of the dependencies.
 After the package was added to your theme `composer.json`, go back to the root
 of the Neos installation and run `composer update`. Et voilà! Your desired
 package is now installed correctly.
-
-## License
-
-Licensed under MIT, see [LICENSE](LICENSE)
