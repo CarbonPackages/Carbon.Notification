@@ -1,20 +1,33 @@
-// Add a notification. `type` can be `alert`, `warning` (default), `info` or `backend`.
-// You need to set `content` to get the notification show.
-// Great for NodeTypes who need an input in the inspector.
-prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Tag) {
-    # type can be alert, warning or info
+// Add a notification.
+
+// `type` can be `alert`, `warning` (default), `info` , `success` or `backend`
+// To add your own type you have to define them in your Settings.yaml
+
+prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Component) {
+    tagName = 'div'
+    content = ${value}
+
+    // type can be alert, warning, info, success or backend
+    // To add your own type you have to define them in your Settings.yaml
     type = 'warning'
 
-    @context {
-        config = ${Configuration.setting('Carbon.Notification')}
-        type = ${this.type}
-    }
+    // Internal
+    typeConfig = ${this.type ? this.config.types[this.type] : null}
+    config = ${Configuration.setting('Carbon.Notification')}
+    @if.hasContentAndType = ${this.content}
 
-    @if.hasContent = ${this.content}
-
-    attributes.style = Neos.Fusion:Array {
-        default = ${config.style}
-        type = ${config[type]}
+    renderer = Neos.Fusion:Tag {
+        tagName = ${props.tagName}
+        attributes.style = Neos.Fusion:Loop {
+            @glue = ';'
+            // Merge all given styles together
+            items = ${Array.filter(Array.concat(props.config.default, props.typeConfig || {}, props, {type : null, tagName: null, content: null, config: null, typeConfig: null}), entry => !! entry)}
+            itemRenderer = ${itemKey + ':' + item}
+        }
+        content = ${props.content}
+        @process.convertToFinalUri = Neos.Neos:ConvertUris {
+            force = true
+        }
     }
-    content = ${value}
 }
+

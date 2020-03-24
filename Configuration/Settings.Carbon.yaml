@@ -1,9 +1,34 @@
 Carbon:
   Notification:
-    alert: "background:#d9534f;"
-    warning: "background:#f0ad4e;"
-    info: "background:#5bc0de;"
-    backend: "background:#222;"
-    style: "color:#fff;box-shadow:0 1px 10px rgba(0,0,0,0.1);padding:5% 12px;margin:30px auto;text-align:center;text-decoration:none;font-size:20px;"
-    data: "width:100%;display:block;"
-    hide: "display:none !important;"
+    # These styles get applied to every notification
+    default:
+      color: '#fff'
+      box-shadow: '0 1px 10px rgba(0,0,0,0.1)'
+      padding: '5% 12px'
+      margin: '30px auto'
+      text-align: center
+      text-decoration: none
+      font-size: 20px
+
+    # Set the special styles for the different types
+    # You can also define your own types here
+    types:
+      alert:
+        background: '#d9534f'
+      warning:
+        background: '#f0ad4e'
+      info:
+        background: '#5bc0de'
+      success:
+        background: '#00a338'
+      backend:
+        background: '#222'
+
+    data:
+      # This styles get applied to the data-carbon-* notification (Along with the others from above)
+      default:
+        width: 100%
+        display: block
+      # If the tag with the attribute data-carbon-* is not empty, these styles gets applied
+      notEmpty:
+        display: 'none !important'
