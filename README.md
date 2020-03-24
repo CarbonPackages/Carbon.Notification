@@ -4,7 +4,21 @@
 
 This package provides a tiny fusion helper for notifications:
 
-![screenshot]
+Type `info`  
+![screenshot info]
+
+Type `warning`  
+![screenshot warning]
+
+Type `alert`  
+![screenshot alert]
+
+Type `success`  
+![screenshot success]
+
+Besides these four types, there is also the type `backend`, which on a document, 
+which is in the colors of the Neos Backend, is ideal for a notification.  
+![screenshot backend]
 
 ## [Carbon.Notification:Tag]
 
@@ -81,4 +95,8 @@ package is now installed correctly.
 [carbon.notification:backend]: Resources/Private/Fusion/Components/Backend.fusion
 [carbon.notification:data]: Resources/Private/Fusion/Components/Data.fusion
 [`settings.carbon.yaml`]: Configuration/Settings.Carbon.yaml
-[screenshot]: https://user-images.githubusercontent.com/4510166/77481791-b4d5a600-6e24-11ea-9800-68b1a8510fa1.png
+[screenshot alert]: https://user-images.githubusercontent.com/4510166/77485453-7bedff00-6e2d-11ea-9795-97aab52ded6d.png
+[screenshot backend]: https://user-images.githubusercontent.com/4510166/77485456-7db7c280-6e2d-11ea-87f4-969713364f07.png
+[screenshot info]: https://user-images.githubusercontent.com/4510166/77485458-7e505900-6e2d-11ea-88f9-2b579bb92d9e.png
+[screenshot success]: https://user-images.githubusercontent.com/4510166/77485460-7ee8ef80-6e2d-11ea-8b1e-ce54cb3e9a7b.png
+[screenshot warning]: https://user-images.githubusercontent.com/4510166/77485461-7ee8ef80-6e2d-11ea-98df-fab3a134b814.png
