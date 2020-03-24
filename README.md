@@ -2,7 +2,9 @@
 
 # Carbon.Notification Package for Neos CMS
 
-This package provides a tiny fusion helper for notifications.
+This package provides a tiny fusion helper for notifications:
+
+![screenshot]
 
 ## [Carbon.Notification:Tag]
 
@@ -79,3 +81,4 @@ package is now installed correctly.
 [carbon.notification:backend]: Resources/Private/Fusion/Components/Backend.fusion
 [carbon.notification:data]: Resources/Private/Fusion/Components/Data.fusion
 [`settings.carbon.yaml`]: Configuration/Settings.Carbon.yaml
+[screenshot]: https://user-images.githubusercontent.com/4510166/77481791-b4d5a600-6e24-11ea-9800-68b1a8510fa1.png
