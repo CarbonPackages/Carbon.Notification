@@ -1,0 +1,9 @@
+Carbon:
+  Notification:
+    alert: "background:#d9534f;"
+    warning: "background:#f0ad4e;"
+    info: "background:#5bc0de;"
+    backend: "background:#222;"
+    style: "color:#fff;box-shadow:0 1px 10px rgba(0,0,0,0.1);padding:5% 12px;margin:30px auto;text-align:center;text-decoration:none;font-size:20px;"
+    data: "width:100%;display:block;"
+    hide: "display:none !important;"
