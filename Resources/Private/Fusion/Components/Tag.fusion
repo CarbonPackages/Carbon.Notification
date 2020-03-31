@@ -7,6 +7,9 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Component) {
     tagName = 'div'
     content = ${value}
 
+    // pass an optional class to the tag
+    class = null
+
     // type can be alert, warning, info, success or backend
     // To add your own type you have to define them in your Settings.yaml
     type = 'warning'
@@ -18,11 +21,14 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Component) {
 
     renderer = Neos.Fusion:Tag {
         tagName = ${props.tagName}
-        attributes.style = Neos.Fusion:Loop {
-            @glue = ';'
-            // Merge all given styles together
-            items = ${Array.filter(Array.concat(props.config.default, props.typeConfig || {}, props, {type : null, tagName: null, content: null, config: null, typeConfig: null}), entry => !! entry)}
-            itemRenderer = ${itemKey + ':' + item}
+        attributes {
+            class = ${props.class}
+            style = Neos.Fusion:Loop {
+                @glue = ';'
+                // Merge all given styles together
+                items = ${Array.filter(Array.concat(props.config.default, props.typeConfig || {}, props, {type : null, tagName: null, content: null, config: null, typeConfig: null, class: null}), entry => !! entry)}
+                itemRenderer = ${itemKey + ':' + item}
+            }
         }
         content = ${props.content}
         @process.convertToFinalUri = Neos.Neos:ConvertUris {
