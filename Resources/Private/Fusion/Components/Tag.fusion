@@ -17,7 +17,7 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Component) {
     // Internal
     typeConfig = ${this.type ? this.config.types[this.type] : null}
     config = ${Configuration.setting('Carbon.Notification')}
-    @if.hasContentAndType = ${this.content}
+    @if.hasContent = ${this.content}
 
     renderer = Neos.Fusion:Tag {
         tagName = ${props.tagName}
@@ -26,7 +26,7 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Component) {
             style = Neos.Fusion:Loop {
                 @glue = ';'
                 // Merge all given styles together
-                items = ${Array.filter(Array.concat(props.config.default, props.typeConfig || {}, props, {type : null, tagName: null, content: null, config: null, typeConfig: null, class: null}), entry => !! entry)}
+                items = ${Array.filter(Array.concat(props.config.default, props.typeConfig || {}, props, {type : null, tagName: null, content: null, config: null, typeConfig: null, class: null}), entry => !!String.length(entry))}
                 itemRenderer = ${itemKey + ':' + item}
             }
         }
@@ -36,4 +36,3 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Component) {
         }
     }
 }
-
