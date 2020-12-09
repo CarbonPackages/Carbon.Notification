@@ -6,7 +6,7 @@
     "license": "GPL-3.0-or-later",
     "keywords": ["flow", "neos", "fusion", "helper", "carbon"],
     "require": {
-        "neos/fusion": "^4.2 || ^5.0"
+        "neos/fusion": "^4.2 || ^5.0 || ^7.0"
     },
     "authors": [
         {
