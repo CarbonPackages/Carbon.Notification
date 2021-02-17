@@ -16,7 +16,7 @@ Type `alert`
 Type `success`  
 ![screenshot success]
 
-Besides these four types, there is also the type `backend`, which on a document, 
+Besides these four types, there is also the type `backend`, which on a document,
 which is in the colors of the Neos Backend, is ideal for a notification.  
 ![screenshot backend]
 
@@ -25,7 +25,7 @@ which is in the colors of the Neos Backend, is ideal for a notification.
 Adds a notification. `type` can be `alert`, `warning` (default), `info`, `success` or
 `backend`. You need to set `content` to get the notification showing. If you want to
 add/change a style, you can pass a key/value pair to it. For example, you want to
-alter the `padding` and want to change the `font-weight` to `bold`.
+alter the `padding` and want to change the `font-weight` to `bold` you can enter:
 
 ```elm
 notification = Carbon.Notification:Tag {
@@ -35,6 +35,9 @@ notification = Carbon.Notification:Tag {
     content = 'Here comes your content'
 }
 ```
+
+With the `lang` attribute you can set an alternative language. Useful if your interface
+and website languages differ from each other.
 
 ## [Carbon.Notification:Backend]
 

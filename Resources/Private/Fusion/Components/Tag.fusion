@@ -10,6 +10,9 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Component) {
     // pass an optional class to the tag
     class = null
 
+    // Set alternative language
+    lang = null
+
     // type can be alert, warning, info, success or backend
     // To add your own type you have to define them in your Settings.yaml
     type = 'warning'
@@ -23,10 +26,11 @@ prototype(Carbon.Notification:Tag) < prototype(Neos.Fusion:Component) {
         tagName = ${props.tagName}
         attributes {
             class = ${props.class}
+            lang = ${props.lang}
             style = Neos.Fusion:Loop {
                 @glue = ';'
                 // Merge all given styles together
-                items = ${Array.filter(Array.concat(props.config.default, props.typeConfig || {}, props, {type : null, tagName: null, content: null, config: null, typeConfig: null, class: null}), entry => !!String.length(entry))}
+                items = ${Array.filter(Array.concat(props.config.default, props.typeConfig || {}, props, {type : null, tagName: null, content: null, config: null, typeConfig: null, class: null, lang: null}), entry => !!String.length(entry))}
                 itemRenderer = ${itemKey + ':' + item}
             }
         }
