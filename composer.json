@@ -1,18 +1,23 @@
 {
     "name": "carbon/notification",
     "type": "neos-carbon",
-    "description":
-        "This package provides a tiny fusion helper for notifications.",
+    "description": "This package provides a tiny fusion helper for notifications.",
     "license": "GPL-3.0-or-later",
-    "keywords": ["flow", "neos", "fusion", "helper", "carbon"],
+    "keywords": [
+        "flow",
+        "neos",
+        "fusion",
+        "helper",
+        "carbon"
+    ],
     "require": {
-        "neos/fusion": "^4.2 || ^5.0 || ^7.0"
+        "neos/fusion": "^4.2 || ^5.0 || ^7.0 || ^8.0"
     },
     "authors": [
         {
             "name": "Jon Uhlmann",
-            "email": "me@jonnitto.ch",
-            "homepage": "https://jonnitto.ch",
+            "email": "hello@uhlmann.pro",
+            "homepage": "https://www.uhlmann.pro",
             "role": "Developer"
         }
     ],
@@ -31,7 +36,6 @@
         }
     },
     "extra": {
-        "marketplace-account": "me@jonnitto.ch",
         "installer-name": "Carbon.Notification",
         "neos": {
             "package-key": "Carbon.Notification"
