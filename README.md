@@ -4,20 +4,20 @@
 
 This package provides a tiny fusion helper for notifications:
 
-Type `info`  
+Type `info`
 ![screenshot info]
 
-Type `warning`  
+Type `warning`
 ![screenshot warning]
 
-Type `alert`  
+Type `alert`
 ![screenshot alert]
 
-Type `success`  
+Type `success`
 ![screenshot success]
 
 Besides these four types, there is also the type `backend`, which on a document,
-which is in the colors of the Neos Backend, is ideal for a notification.  
+which is in the colors of the Neos Backend, is ideal for a notification.
 ![screenshot backend]
 
 ## [Carbon.Notification:Tag]
@@ -41,7 +41,7 @@ and website languages differ from each other.
 
 ## [Carbon.Notification:Backend]
 
-A variant from `Carbon.Notification:Tag`.  
+A variant from `Carbon.Notification:Tag`.
 This notification gets only shown in the backend. Great for NodeTypes, who need
 input in the inspector. It has the same capabilities as [Carbon.Notification:Tag],
 it is just extended with `@if.inBackend = ${node.context.inBackend}`
@@ -56,6 +56,10 @@ You can also pass directly `data-carbon-*` to an element. If the HTML element ha
 the message is shown, otherwise, it will be hidden. This is done with the CSS selector `:not(:emtpy)`
 
 A use-case for this if you want to show a notification if a content collection is empty.
+
+## [Carbon.Notification:Document]
+
+This sourounds `Carbon.Notification:Tag` with the needed `HTML` Markup for a document.
 
 ## Customization
 
@@ -96,6 +100,7 @@ package is now installed correctly.
 [subscription]: https://github.com/CarbonPackages/Carbon.Notification/subscription
 [carbon.notification:tag]: Resources/Private/Fusion/Components/Tag.fusion
 [carbon.notification:backend]: Resources/Private/Fusion/Components/Backend.fusion
+[carbon.notification:document]: Resources/Private/Fusion/Components/Document.fusion
 [carbon.notification:data]: Resources/Private/Fusion/Components/Data.fusion
 [`settings.carbon.yaml`]: Configuration/Settings.Carbon.yaml
 [screenshot alert]: https://user-images.githubusercontent.com/4510166/77485453-7bedff00-6e2d-11ea-9795-97aab52ded6d.png
