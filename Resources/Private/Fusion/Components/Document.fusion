@@ -1,0 +1,19 @@
+prototype(Carbon.Notification:Document) < prototype(Neos.Fusion:Component) {
+    lang = null
+    title = null
+
+    renderer = Neos.Fusion:Http.Message {
+        httpResponseHead.headers.'Content-Type' = 'text/html'
+        doctype = '<!DOCTYPE html>'
+        content = afx`
+            <html lang={props.lang} style="height:100%">
+                <head>
+                    <title>{props.title}</title>
+                </head>
+                <body style="font-family:'Noto Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'">
+                    <Carbon.Notification:Tag {...props} lang={null} />
+                </body>
+            </html>
+        `
+    }
+}
