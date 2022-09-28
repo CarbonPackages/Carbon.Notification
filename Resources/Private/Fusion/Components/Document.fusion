@@ -2,16 +2,63 @@ prototype(Carbon.Notification:Document) < prototype(Neos.Fusion:Component) {
     lang = null
     title = null
 
+    neosBackendHead = Neos.Fusion:Join {
+        @if.inBackend = ${documentNode.context.inBackend}
+        javascriptBackendInformation = Neos.Neos.Ui:RenderConfiguration {
+            path = 'documentNodeInformation'
+            context {
+                documentNode = ${documentNode}
+                site = ${site}
+            }
+            @process.json = ${Json.stringify(value)}
+            @process.wrapInJsObject = ${'<script>window[\'@Neos.Neos.Ui:DocumentInformation\']=' + value + '</script>'}
+            @cache {
+                mode = 'cached'
+                entryIdentifier {
+                    jsBackendInfo = 'javascriptBackendInformation'
+                    documentNode = ${documentNode}
+                    inBackend = ${documentNode.context.inBackend}
+                }
+                entryTags {
+                    1 = ${Neos.Caching.nodeTag(documentNode)}
+                    2 = ${Neos.Caching.descendantOfTag(documentNode)}
+                }
+            }
+        }
+        guestFrameApplication = Neos.Fusion:Template {
+            templatePath = 'resource://Neos.Neos.Ui/Private/Templates/Backend/Guest.html'
+            compiledResourcePackage = ${Neos.Ui.StaticResources.compiledResourcePackage()}
+            sectionName = 'guestFrameApplication'
+        }
+    }
+    neosUiNonRenderedNodeMetadata = Neos.Fusion:Value {
+        @if {
+            inBackend = ${node.context.inBackend}
+            canRender = Neos.Fusion:CanRender {
+                type = 'Neos.Neos.Ui:RenderNonRenderedNodeMetadata'
+            }
+        }
+        value = Neos.Neos.Ui:RenderNonRenderedNodeMetadata {
+            @class = 'Neos\\Neos\\Ui\\Fusion\\RenderNonRenderedNodeMetadataImplementation'
+            node = ${node}
+        }
+    }
+
     renderer = Neos.Fusion:Http.Message {
         httpResponseHead.headers.'Content-Type' = 'text/html'
         doctype = '<!DOCTYPE html>'
         content = afx`
-            <html lang={props.lang} style="height:100%">
+            <html lang={props.lang}>
                 <head>
-                    <title>{props.title}</title>
+                    <meta charset="UTF-8" />
+                    <title>{props.title || q(documentNode).property('title')}</title>
+                    {props.neosBackendHead}
                 </head>
                 <body style="font-family:'Noto Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'">
                     <Carbon.Notification:Tag {...props} lang={null} />
+                    <div id='neos-backend-container' @if.inBackend={documentNode.context.inBackend}></div>
+                    <Neos.Fusion:Template templatePath='resource://Neos.Neos.Ui/Private/Templates/Backend/GuestNotificationScript.html' @if.inBackend={documentNode.context.inBackend} />
+                    {props.neosUiNonRenderedNodeMetadata}
                 </body>
             </html>
         `
