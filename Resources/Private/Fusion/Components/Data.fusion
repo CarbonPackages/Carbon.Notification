@@ -5,7 +5,7 @@
 // To add your own type you have to define them in your Settings.yaml
 prototype(Carbon.Notification:Data) < prototype(Neos.Fusion:Value) {
     @if {
-        inBackend = ${node.context.inBackend}
+        inBackend = ${renderingMode.isEdit}
         hasContent = ${this.content}
     }
     content = ${value}

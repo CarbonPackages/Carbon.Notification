@@ -11,7 +11,7 @@
         "carbon"
     ],
     "require": {
-        "neos/fusion": "^4.2 || ^5.0 || ^7.0 || ^8.0 || ^9.0 || dev-9.0"
+        "neos/fusion": "^9.0 || dev-master"
     },
     "authors": [
         {

@@ -5,5 +5,5 @@
 // To add your own type you have to define them in your Settings.yaml
 
 prototype(Carbon.Notification:Backend) < prototype(Carbon.Notification:Tag) {
-    @if.inBackend = ${node.context.inBackend}
+    @if.inBackend = ${renderingMode.isEdit}
 }

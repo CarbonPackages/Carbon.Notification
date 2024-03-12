@@ -3,7 +3,7 @@ prototype(Carbon.Notification:Document) < prototype(Neos.Fusion:Component) {
     title = null
 
     neosBackendHead = Neos.Fusion:Join {
-        @if.inBackend = ${documentNode.context.inBackend}
+        @if.inBackend = ${renderingMode.isEdit}
         javascriptBackendInformation = Neos.Neos.Ui:RenderConfiguration {
             path = 'documentNodeInformation'
             context {
@@ -16,8 +16,8 @@ prototype(Carbon.Notification:Document) < prototype(Neos.Fusion:Component) {
                 mode = 'cached'
                 entryIdentifier {
                     jsBackendInfo = 'javascriptBackendInformation'
-                    documentNode = ${documentNode}
-                    inBackend = ${documentNode.context.inBackend}
+                    documentNode = ${Neos.Caching.entryIdentifierForNode(documentNode)}
+                    inBackend = ${renderingMode.isEdit}
                 }
                 entryTags {
                     1 = ${Neos.Caching.nodeTag(documentNode)}
@@ -33,7 +33,7 @@ prototype(Carbon.Notification:Document) < prototype(Neos.Fusion:Component) {
     }
     neosUiNonRenderedNodeMetadata = Neos.Fusion:Value {
         @if {
-            inBackend = ${node.context.inBackend}
+            inBackend = ${renderingMode.isEdit}
             canRender = Neos.Fusion:CanRender {
                 type = 'Neos.Neos.Ui:RenderNonRenderedNodeMetadata'
             }
@@ -56,8 +56,8 @@ prototype(Carbon.Notification:Document) < prototype(Neos.Fusion:Component) {
                 </head>
                 <body style="font-family:'Noto Sans', ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Ubuntu, Cantarell, Noto Sans, sans-serif, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol', 'Noto Color Emoji'">
                     <Carbon.Notification:Tag {...props} lang={null} />
-                    <div id='neos-backend-container' @if.inBackend={documentNode.context.inBackend}></div>
-                    <Neos.Fusion:Template templatePath='resource://Neos.Neos.Ui/Private/Templates/Backend/GuestNotificationScript.html' @if.inBackend={documentNode.context.inBackend} />
+                    <div id='neos-backend-container' @if.inBackend={renderingMode.isEdit}></div>
+                    <Neos.Fusion:Template templatePath='resource://Neos.Neos.Ui/Private/Templates/Backend/GuestNotificationScript.html' @if.inBackend={renderingMode.isEdit} />
                     {props.neosUiNonRenderedNodeMetadata}
                 </body>
             </html>
