@@ -2,7 +2,7 @@ prototype(Carbon.Notification:Style) < prototype(Neos.Fusion:Component) {
     config = ${Configuration.setting('Carbon.Notification')}
     types = ${Array.filter(this.config.types, entry => !!entry)}
 
-    @if.hasTypesAndInBackend = ${node.context.inBackend && Array.length(this.types)}
+    @if.hasTypesAndInBackend = ${renderingMode.isEdit && Array.length(this.types)}
 
     renderer = Neos.Fusion:Join {
         // These styles are for all types
